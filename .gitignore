@@ -5,6 +5,9 @@ node_modules/
 .vscode/
 .idea/
 
+# Build cache
+.vite/
+
 # OS
 .DS_Store
 Thumbs.db

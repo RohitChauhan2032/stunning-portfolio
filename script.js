@@ -253,9 +253,10 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.add('active');
 
             projectCards.forEach(card => {
-                const category = card.getAttribute('data-category');
+                const category = card.getAttribute('data-category') || '';
+                const categories = category.split(' ');
 
-                if (filter === 'all' || category === filter) {
+                if (filter === 'all' || categories.includes(filter)) {
                     card.classList.remove('hidden');
                     card.style.animation = 'fadeIn 0.5s ease forwards';
                 } else {
