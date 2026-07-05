@@ -3,34 +3,34 @@
    ======================================== */
 :root {
     /* Colors */
-    --primary: #6C63FF;
-    --primary-light: #8B83FF;
-    --primary-dark: #5A52E0;
-    --primary-glow: rgba(108, 99, 255, 0.4);
-    --secondary: #00D4AA;
-    --secondary-glow: rgba(0, 212, 170, 0.3);
-    --accent: #FF6B9D;
-    --accent-glow: rgba(255, 107, 157, 0.3);
+    --primary: #796BFF;
+    --primary-light: #9B8FFF;
+    --primary-dark: #584AFF;
+    --primary-glow: rgba(121, 107, 255, 0.55);
+    --secondary: #00ffd0;
+    --secondary-glow: rgba(0, 255, 208, 0.45);
+    --accent: #ff3366;
+    --accent-glow: rgba(255, 51, 102, 0.45);
     
-    --bg-primary: #0A0A1A;
-    --bg-secondary: #0F0F2E;
-    --bg-tertiary: #141432;
-    --bg-card: rgba(20, 20, 50, 0.6);
-    --bg-card-hover: rgba(30, 30, 65, 0.8);
-    --bg-glass: rgba(255, 255, 255, 0.03);
-    --bg-glass-hover: rgba(255, 255, 255, 0.06);
+    --bg-primary: #030308;
+    --bg-secondary: #080812;
+    --bg-tertiary: #0E0E20;
+    --bg-card: rgba(13, 13, 30, 0.45);
+    --bg-card-hover: rgba(20, 20, 48, 0.65);
+    --bg-glass: rgba(255, 255, 255, 0.025);
+    --bg-glass-hover: rgba(255, 255, 255, 0.05);
     
     --text-primary: #EAEAF5;
     --text-secondary: #9B9BB5;
     --text-muted: #6B6B85;
     
-    --border: rgba(255, 255, 255, 0.06);
-    --border-hover: rgba(108, 99, 255, 0.3);
+    --border: rgba(255, 255, 255, 0.04);
+    --border-hover: rgba(121, 107, 255, 0.35);
     
-    --gradient-primary: linear-gradient(135deg, #6C63FF, #00D4AA);
-    --gradient-accent: linear-gradient(135deg, #FF6B9D, #6C63FF);
-    --gradient-warm: linear-gradient(135deg, #FF6B9D, #FFB347);
-    --gradient-dark: linear-gradient(180deg, #0A0A1A, #0F0F2E);
+    --gradient-primary: linear-gradient(135deg, #796BFF, #00ffd0);
+    --gradient-accent: linear-gradient(135deg, #ff3366, #796BFF);
+    --gradient-warm: linear-gradient(135deg, #ff3366, #FFB347);
+    --gradient-dark: linear-gradient(180deg, #030308, #080812);
     
     /* Spacing */
     --section-padding: 120px 0;
@@ -2202,3 +2202,62 @@ ul, ol {
     background: rgba(108, 99, 255, 0.3);
     color: var(--text-primary);
 }
+
+/* ========================================
+   BACKGROUND GLOW ORBS
+   ======================================== */
+.bg-orb {
+    position: absolute;
+    border-radius: var(--radius-full);
+    filter: blur(130px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.75;
+    transition: transform var(--transition-slow);
+}
+
+.bg-orb-primary {
+    background: radial-gradient(circle, rgba(121, 107, 255, 0.22) 0%, transparent 70%);
+    width: 600px;
+    height: 600px;
+}
+
+.bg-orb-secondary {
+    background: radial-gradient(circle, rgba(0, 255, 208, 0.18) 0%, transparent 70%);
+    width: 500px;
+    height: 500px;
+}
+
+.bg-orb-accent {
+    background: radial-gradient(circle, rgba(255, 51, 102, 0.18) 0%, transparent 70%);
+    width: 450px;
+    height: 450px;
+}
+
+/* Animations for subtle organic movement */
+@keyframes floatOrb {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(30px, -50px) scale(1.05);
+    }
+    66% {
+        transform: translate(-20px, 20px) scale(0.95);
+    }
+}
+
+.bg-orb-float-1 {
+    animation: floatOrb 20s ease-in-out infinite;
+}
+
+.bg-orb-float-2 {
+    animation: floatOrb 25s ease-in-out infinite alternate;
+    animation-delay: -5s;
+}
+
+.bg-orb-float-3 {
+    animation: floatOrb 30s ease-in-out infinite;
+    animation-delay: -10s;
+}
+
